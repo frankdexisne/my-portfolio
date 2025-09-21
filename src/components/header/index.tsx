@@ -60,17 +60,6 @@ const Header = () => {
             </List.Item>
             <List.Item>Object-Oriented Programming enthusiast</List.Item>
           </List>
-
-          <Group mt={30}>
-            <Button
-              component="a"
-              radius="xl"
-              size="md"
-              className={classes.control}
-            >
-              DOWNLOAD MY RESUME
-            </Button>
-          </Group>
         </Grid.Col>
         <Grid.Col
           span={{ base: 12, md: 5 }}

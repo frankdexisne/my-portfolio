@@ -16,6 +16,8 @@ import restApiIcon from "../../assets/rest-api-icon.webp";
 import wordpressIcon from "../../assets/wordpress.png";
 import jqueryIcon from "../../assets/jquery.png";
 import expressJsIcon from "../../assets/express-js.png";
+import bootstrapIcon from "../../assets/bootstrap.png";
+import tailwindcssIcon from "../../assets/tailwindcss.png";
 
 const data = [
   {
@@ -83,13 +85,21 @@ const data = [
     image: wordpressIcon,
     title: "Wordpress",
   },
+  {
+    image: bootstrapIcon,
+    title: "Bootstrap",
+  },
+  {
+    image: tailwindcssIcon,
+    title: "Tailwind CSS",
+  },
 ];
 
 const TechStack = () => {
   return (
     <Container pt={50} mb={50} size="xl">
       <Title className={classes.title} order={2} c="white" mb={40}>
-        Skills and Technologies
+        SKILLS AND TECHNOLOGIES
       </Title>
 
       <Grid>
