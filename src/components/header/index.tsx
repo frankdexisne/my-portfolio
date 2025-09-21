@@ -64,20 +64,11 @@ const Header = () => {
           <Group mt={30}>
             <Button
               component="a"
-              href="mailto:frankdexisne1692@gmail.com"
               radius="xl"
               size="md"
               className={classes.control}
             >
-              Email Me
-            </Button>
-            <Button
-              variant="default"
-              radius="xl"
-              size="md"
-              className={classes.control}
-            >
-              My Portfolio
+              DOWNLOAD MY RESUME
             </Button>
           </Group>
         </Grid.Col>
