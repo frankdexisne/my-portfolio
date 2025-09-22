@@ -1,9 +1,7 @@
 import { IconCheck } from "@tabler/icons-react";
 import { useMediaQuery } from "@mantine/hooks";
 import {
-  Button,
   Container,
-  Group,
   List,
   Text,
   ThemeIcon,

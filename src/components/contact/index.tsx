@@ -7,7 +7,6 @@ import {
   Button,
 } from "@mantine/core";
 import {
-  IconLocation,
   IconMapPin,
   IconBrandGithub,
   IconBrandLinkedin,

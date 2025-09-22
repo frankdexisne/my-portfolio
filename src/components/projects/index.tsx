@@ -1,10 +1,8 @@
 import {
-  Grid,
   Container,
   Card,
   Image,
   Text,
-  Badge,
   Button,
   Group,
   Title,
@@ -13,11 +11,9 @@ import {
 import { Carousel } from "@mantine/carousel";
 import doffImage from "../../assets/projects/doff.png";
 import lexmondImage from "../../assets/projects/lexmond.png";
-import southflorida from "../../assets/projects/south-florida.png";
 import telehealthImage from "../../assets/projects/telehealth.png";
 import msmisImage from "../../assets/projects/msmis.png";
 import projectlerImage from "../../assets/projects/projectler.jpeg";
-import wordpress from "../../assets/projects/wordpress.gif";
 import cornerstone from "../../assets/projects/cornerstone.webp";
 
 interface IProject {
