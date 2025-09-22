@@ -39,7 +39,13 @@ const Contact = () => {
         >
           Get in Touch
         </Button>
-        <Button size="lg" leftSection={<IconFile />}>
+        <Button
+          size="lg"
+          leftSection={<IconFile />}
+          component="a"
+          target="_blank"
+          href="https://docs.google.com/document/d/1NLTebmWyfuQv1xuxDiCZSkXT99sqvPTaHor-RWFqvtE/edit?usp=sharing"
+        >
           View Resume
         </Button>
       </Group>
