@@ -19,7 +19,7 @@ const Header = () => {
             FRANKLY D. DEXISNE JR
           </Title>
           <Text c="dimmed" mt="sm" fz={26} fw={600}>
-            Full Stack/BackEnd Developer
+            Full Stack Web Developer
           </Text>
 
           <List
