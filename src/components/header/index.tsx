@@ -9,8 +9,9 @@ import {
   Avatar,
   Grid,
 } from "@mantine/core";
-import image from "../../assets/my-photo.jpg";
+import image from "../../assets/my-profile.png";
 import classes from "./header.module.css";
+import LazyImage from "../base/LazyImage";
 
 const Header = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -26,7 +27,7 @@ const Header = () => {
             FRANKLY D. DEXISNE JR
           </Title>
           <Text c="dimmed" mt="sm" fz={26} fw={600}>
-            Full Stack Developer
+            Full Stack/BackEnd Developer
           </Text>
 
           <List
@@ -64,7 +65,12 @@ const Header = () => {
           order={{ base: 1, sm: 2 }}
           className="flex justify-center"
         >
-          <Avatar src={image} className={classes.image} />
+          {/* <Avatar src={image} className={classes.image} /> */}
+          <LazyImage
+            src={image}
+            alt="Frankly D. Dexisne Jr"
+            className={classes.image}
+          />
         </Grid.Col>
       </Grid>
     </Container>
