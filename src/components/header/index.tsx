@@ -1,14 +1,6 @@
 import { IconCheck } from "@tabler/icons-react";
 import { useMediaQuery } from "@mantine/hooks";
-import {
-  Container,
-  List,
-  Text,
-  ThemeIcon,
-  Title,
-  Avatar,
-  Grid,
-} from "@mantine/core";
+import { Container, List, Text, ThemeIcon, Title, Grid } from "@mantine/core";
 import image from "../../assets/my-profile.png";
 import classes from "./header.module.css";
 import LazyImage from "../base/LazyImage";
