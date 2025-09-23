@@ -137,7 +137,8 @@ const projects: IProject[] = [
           <b>Technology </b> <br />
           Laravel 10, ReactJS, Typescript, MySQL <br /> <b>
             UI Library
-          </b> <br /> Mantine UI Library
+          </b> <br /> Mantine UI Library <br /> <b>Integration</b> <br />
+          Paymongo
         </Text>
       </>
     ),
@@ -147,7 +148,6 @@ const projects: IProject[] = [
     title: "Telehealth Information System with integration to IHOMIS",
     description:
       "An innovative “Call Center for Health” service that captures patient consultations through an online platform and automatically syncs records with iHOMIS (Integrated Hospital Operations and Management Information System).",
-    link: "https://lexmond.ph",
     role: "Full Stack Developer",
     otherSection: (
       <>
@@ -158,14 +158,13 @@ const projects: IProject[] = [
         </Text>
       </>
     ),
-    buttonText: "View Screenshots",
+    buttonText: "Request a Demo",
   },
   {
     image: msmisImage,
     title: "Material and Supply Management Inventory System",
     description:
       "Developed a responsive inventory management system for hospitals, enabling real-time monitoring of medical supplies and equipment, automated replenishment, and precise record-keeping across all units.",
-    link: "https://lexmond.ph",
     role: "Full Stack Developer",
     otherSection: (
       <>
@@ -176,7 +175,7 @@ const projects: IProject[] = [
         </Text>
       </>
     ),
-    buttonText: "View Screenshots",
+    buttonText: "Request a Demo",
   },
   {
     image: projectlerImage,
@@ -203,7 +202,7 @@ interface ProjectItemProps {
   project: IProject;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
+export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>

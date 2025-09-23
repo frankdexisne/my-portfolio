@@ -1,23 +1,17 @@
-import { MantineProvider, Divider } from "@mantine/core";
-import Header from "./components/header";
-import TechStack from "./components/tech-stack";
-import Projects from "./components/projects";
-import Contact from "./components/contact";
+import { MantineProvider } from "@mantine/core";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
 
 function App() {
   return (
     <MantineProvider>
-      <div className="bg-[#101928]">
-        <Header />
-      </div>
-      <div className="bg-[#1f2b37] py-[10px]">
-        <TechStack />
-      </div>
-      <div className="bg-[#101928]">
-        <Projects />
-        <Divider />
-        <Contact />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </MantineProvider>
   );
 }
