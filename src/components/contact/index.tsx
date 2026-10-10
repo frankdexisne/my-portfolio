@@ -200,7 +200,7 @@ const Contact = () => {
                 leftSection={<IconFileText size={18} color="#38bdf8" />}
                 component="a"
                 target="_blank"
-                href="https://docs.google.com/document/d/1NLTebmWyfuQv1xuxDiCZSkXT99sqvPTaHor-RWFqvtE/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1U0uPguPH152eajTj7eWLfWp_iNPmuer40_NrYUDErts/edit?usp=drive_link"
                 fullWidth
                 styles={{
                   root: {
