@@ -1,238 +1,272 @@
+import React from "react";
 import {
   Container,
   Card,
   Image,
   Text,
   Button,
-  Group,
   Title,
   List,
+  Grid,
+  Badge,
+  Box,
+  Group,
+  Stack,
 } from "@mantine/core";
-import { Carousel } from "@mantine/carousel";
+import { IconExternalLink } from "@tabler/icons-react";
+
 import doffImage from "../../assets/projects/doff.png";
 import lexmondImage from "../../assets/projects/lexmond.png";
 import telehealthImage from "../../assets/projects/telehealth.png";
 import msmisImage from "../../assets/projects/msmis.png";
 import projectlerImage from "../../assets/projects/projectler.jpeg";
+import veriqrImage from "../../assets/projects/dvote-logo.png";
 import cornerstone from "../../assets/projects/cornerstone.webp";
 
 interface IProject {
   image: string;
+  categoryBadge: string;
+  badgeColor: string;
   title: string;
+  subtitle: string;
   description: string | React.ReactNode;
   link?: string;
   role: string;
-  otherSection: React.ReactNode;
+  tech: string;
+  uiLibrary?: string;
+  integration?: string;
   buttonText?: string;
 }
 
 const projects: IProject[] = [
   {
     image: doffImage,
-    title: "Daily Overland Freight Forwarder (Website & Mobile App)",
+    categoryBadge: "WEB & MOBILE APP",
+    badgeColor: "blue",
+    title: "Daily Overland Freight Forwarder",
+    subtitle: "Full-Cycle Freight Booking & Live Parcel Tracking",
     description:
-      "Company website and mobile app with integrated online booking, live parcel tracking and tracing, and a streamlined quotation request system.",
+      "Comprehensive freight company platform with online customer booking, live parcel tracking and tracing across transport hubs, and a streamlined quotation request automation system.",
     link: "https://dailyoverland.com",
     role: "Full Stack Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          Laravel 6, JQuery, Javascript, Vue, Framework7 MySQL <br />{" "}
-          <b>UI Library</b> <br /> Regna, Gentellela
-        </Text>
-      </>
-    ),
+    tech: "Laravel 6, JQuery, Javascript, Vue, Framework7, MySQL",
+    uiLibrary: "Regna, Gentellela Admin Suite",
+    buttonText: "View System Details",
   },
   {
     image: doffImage,
-    title: "Daily Overland Freight Forwarder (Manifest Barcoding)",
+    categoryBadge: "LOGISTICS BARCODING",
+    badgeColor: "teal",
+    title: "Manifest Barcoding System",
+    subtitle: "Daily Overland Freight Logistics Pipeline",
     description:
-      "A barcoding module with three phases—dispatching, receiving, and releasing—that tracks the location of customer parcels in real time.",
+      "An industrial-grade barcoding module with three mission-critical operational phases—Dispatching, Receiving, and Releasing—enabling accurate real-time location monitoring for thousands of daily parcels.",
     link: "https://dailyoverland.com",
     role: "Full Stack Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          PHP, JQuery, Javascript, MySQL <br /> <b>UI Library</b> <br /> Regna,
-          Gentellela
-        </Text>
-      </>
-    ),
+    tech: "PHP, JQuery, Javascript, MySQL",
+    uiLibrary: "Regna, Gentellela",
+    buttonText: "View System Details",
   },
   {
     image: cornerstone,
-    title: "Cornerston Marketing Solution Inc. Wordpress Projects",
+    categoryBadge: "WORDPRESS & CMS ENGINEERING",
+    badgeColor: "cyan",
+    title: "Cornerstone Marketing Solutions",
+    subtitle: "Multi-Client Commercial Digital Ecosystem",
     description: (
-      <List fz="sm" spacing={3}>
+      <List fz="sm" spacing={4} c="gray.3" withPadding icon={<span style={{ color: "#38bdf8" }}>•</span>}>
         <List.Item>
-          <a
-            href="https://sfccooling.com/"
-            target="_blank"
-            style={{
-              textDecoration: "underline",
-            }}
-          >
-            South Florida Crane and Cooling Air Conditioning and Heating
+          <a href="https://sfccooling.com/" target="_blank" rel="noreferrer" style={{ color: "#f8fafc", textDecoration: "none" }}>
+            <b>South Florida Crane and Cooling</b> Air Conditioning & Heating
           </a>
         </List.Item>
         <List.Item>
-          {" "}
-          <a
-            href="https://www.lepcofs.com/"
-            target="_blank"
-            style={{
-              textDecoration: "underline",
-            }}
-          >
-            Lepco HVAC & Food Service Solutions
+          <a href="https://www.lepcofs.com/" target="_blank" rel="noreferrer" style={{ color: "#f8fafc", textDecoration: "none" }}>
+            <b>Lepco HVAC</b> & Food Service Solutions
           </a>
         </List.Item>
         <List.Item>
-          {" "}
-          <a
-            href="https://www.islandaireac.com/"
-            target="_blank"
-            style={{
-              textDecoration: "underline",
-            }}
-          >
-            Island Aire
-          </a>
-        </List.Item>
-        <List.Item>
-          <a
-            href="https://www.callairsolutions.com/"
-            target="_blank"
-            style={{
-              textDecoration: "underline",
-            }}
-          >
-            Air Solutions
+          <a href="https://www.islandaireac.com/" target="_blank" rel="noreferrer" style={{ color: "#f8fafc", textDecoration: "none" }}>
+            <b>Island Aire</b> & Air Solutions Network
           </a>
         </List.Item>
       </List>
     ),
     role: "Full Stack Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          PHP, Wordpress, MySQL <br />
-        </Text>
-      </>
-    ),
+    tech: "PHP, WordPress Core, Custom Plugins, MySQL",
+    buttonText: "View Case Study",
   },
   {
     image: lexmondImage,
+    categoryBadge: "EDTECH & FINTECH",
+    badgeColor: "grape",
     title: "Lexmond Online Tutorial Services",
+    subtitle: "2025 Bar Exam Preparation & Scheduling Portal",
     description:
-      "Interactive online tutorials, practice tests, and expert guidance for aspiring attorneys preparing for the Bar",
-    link: "https://app.lexmond.ph/",
+      "Interactive online tutorial and bar examination review scheduling portal, complete with automated curriculum delivery and secure payment processing through Paymongo.",
+    link: "https://www.facebook.com/lexmond.ph",
     role: "Full Stack Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          Laravel 10, ReactJS, Typescript, MySQL <br /> <b>
-            UI Library
-          </b> <br /> Mantine UI Library <br /> <b>Integration</b> <br />
-          Paymongo
-        </Text>
-      </>
-    ),
+    tech: "Laravel 10, React, MySQL",
+    uiLibrary: "Mantine UI Library",
+    integration: "Paymongo Payment Gateway",
+    buttonText: "View System Details",
+  },
+  {
+    image: projectlerImage, // Make sure projectlerImage is imported at the top
+    categoryBadge: "PROJECT MANAGEMENT",
+    badgeColor: "orange",
+    title: "Projectler",
+    subtitle: "Contractor Lead & Estimation Management Platform",
+    description:
+      "A specialized project management web application engineered for contractors to monitor sales leads, streamline project estimations, and manage building projects end-to-end.",
+    link: "https://app.projectler.com",
+    role: "Backend Developer",
+    tech: "NodeJS, ExpressJS, NextJS, Typescript, MySQL",
+    uiLibrary: "Material UI Library",
+    buttonText: "View System Details",
   },
   {
     image: telehealthImage,
-    title: "Telehealth Information System with integration to IHOMIS",
+    categoryBadge: "HEALTHCARE & INTEGRATIONS",
+    badgeColor: "indigo",
+    title: "Telehealth Information System (iHOMIS)",
+    subtitle: "Real-time Patient Consultation & EHR Sync Engine",
     description:
-      "An innovative “Call Center for Health” service that captures patient consultations through an online platform and automatically syncs records with iHOMIS (Integrated Hospital Operations and Management Information System).",
-    role: "Full Stack Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          Laravel 11, ReactJS, Typescript, NodeJS, Express, Socket.io, MySQL,
-          MSSQL <br /> <b>UI Library</b> <br /> Mantine UI Library
-        </Text>
-      </>
-    ),
-    buttonText: "Request a Demo",
+      "An innovative 'Call Center for Health' service capturing online consultations with direct sync protocols to iHOMIS (Integrated Hospital Operations and Management Information System).",
+    link: "https://www.facebook.com/BRHMCTeleHealthHighway",
+      role: "Full Stack Developer",
+    tech: "Laravel 11, ReactJS, Typescript, NodeJS, Express, Socket.io, MySQL, MSSQL",
+    uiLibrary: "Mantine UI Library",
+    buttonText: "View System Details",
   },
   {
     image: msmisImage,
-    title: "Material and Supply Management Inventory System",
+    categoryBadge: "ENTERPRISE INVENTORY",
+    badgeColor: "green",
+    title: "Material & Supply Inventory System",
+    subtitle: "Hospital Medical Equipment & Asset Monitoring",
     description:
-      "Developed a responsive inventory management system for hospitals, enabling real-time monitoring of medical supplies and equipment, automated replenishment, and precise record-keeping across all units.",
+      "Responsive hospital inventory platform enabling real-time monitoring of medical supplies, automated replenishment workflows, and multi-unit audit logging.",
     role: "Full Stack Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          Laravel 11, ReactJS, Typescript, NodeJS, Express, Socket.io, MySQL{" "}
-          <br /> <b>UI Library</b> <br /> Mantine UI Library
-        </Text>
-      </>
-    ),
-    buttonText: "Request a Demo",
+    tech: "Laravel 11, ReactJS, Typescript, NodeJS, Express, Socket.io, MySQL",
+    uiLibrary: "Mantine UI Library",
+    buttonText: "Request System Demo",
   },
   {
-    image: projectlerImage,
-    title: "Projectler",
+    image: veriqrImage, // Import your preview image asset at the top
+    categoryBadge: "EMPLOYEE VERIFICATION",
+    badgeColor: "cyan",
+    title: "VeriQR Verification Portal",
+    subtitle: "Outsourced Workforce Status & Deployment Verification",
     description:
-      "Projectler App streamlines task assignment, progress tracking, and team collaboration for smoother project execution.",
-    link: "https://app.projectler.com",
-    role: "Backend Developer",
-    otherSection: (
-      <>
-        <Text size="sm" c="dimmed" mt={20}>
-          <b>Technology </b> <br />
-          NodeJS, ExpressJS, NextJS, Typescript, MySQL <br /> <b>
-            UI Library
-          </b>{" "}
-          <br /> Material UI Library
-        </Text>
-      </>
-    ),
-  },
+      "A web verification portal designed to instantly validate the active employment and deployment status of outsourced personnel across client sites.",
+    link: "https://veriqr.dvotesoftware.com/",
+    role: "Full Stack Developer",
+    tech: "NestJS, ReactJS, Typescript, Docker, MySQL",
+    uiLibrary: "Mantine UI Library",
+    buttonText: "View System Details",
+  }
 ];
 
-interface ProjectItemProps {
+interface ProjectCardProps {
   project: IProject;
 }
 
-export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
-      <Card.Section>
-        <Image src={project.image} h={160} alt={project.title} />
-      </Card.Section>
-      <div className="min-h-[80px]">
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500}>{project.title}</Text>
-        </Group>
-      </div>
+    <Card
+      radius="lg"
+      padding="xl"
+      style={{
+        backgroundColor: "rgba(15, 23, 42, 0.75)",
+        border: "1px solid rgba(255, 255, 255, 0.08)",
+        backdropFilter: "blur(12px)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%",
+      }}
+    >
+      <div>
+        {/* Card Header Preview Image with Overlay Badge */}
+        <Box pos="relative" mb="md">
+          <Badge
+            pos="absolute"
+            top={12}
+            left={12}
+            style={{ zIndex: 5 }}
+            size="md"
+            radius="sm"
+            color={project.badgeColor}
+            variant="filled"
+          >
+            {project.categoryBadge}
+          </Badge>
 
-      <div className="min-h-[120px]">
-        <Text size="sm" c="dimmed">
-          {project.description}
+          <Image
+            src={project.image}
+            h={180}
+            radius="md"
+            alt={project.title}
+            style={{
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              filter: "brightness(0.9)",
+            }}
+          />
+        </Box>
+
+        {/* Title & Subtitle */}
+        <Title order={3} c="white" fz={22} fw={700}>
+          {project.title}
+        </Title>
+        <Text c="cyan.4" fz="xs" fw={600} mt={2} mb="sm">
+          {project.subtitle}
         </Text>
+
+        {/* Main Body Description */}
+        <Box mih={80} mb="md">
+          {typeof project.description === "string" ? (
+            <Text fz="sm" c="gray.4" lh={1.5}>
+              {project.description}
+            </Text>
+          ) : (
+            project.description
+          )}
+        </Box>
+
+        {/* Tech Stack Details */}
+        <Stack gap={4} mt="md" pt="sm" style={{ borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
+          <Text fz="xs" c="gray.5" style={{ fontFamily: "monospace" }}>
+            <strong style={{ color: "#94a3b8" }}>TECHNOLOGY:</strong> {project.tech}
+          </Text>
+          {project.uiLibrary && (
+            <Text fz="xs" c="gray.5" style={{ fontFamily: "monospace" }}>
+              <strong style={{ color: "#94a3b8" }}>UI LIBRARY:</strong> {project.uiLibrary}
+            </Text>
+          )}
+          {project.integration && (
+            <Text fz="xs" c="gray.5" style={{ fontFamily: "monospace" }}>
+              <strong style={{ color: "#38bdf8" }}>INTEGRATION:</strong> {project.integration}
+            </Text>
+          )}
+        </Stack>
       </div>
 
-      <div className="min-h-[150px]">{project.otherSection}</div>
-
+      {/* Action Button */}
       <Button
-        color="blue"
-        fullWidth
-        mt="md"
-        radius="md"
         component="a"
+        href={project.link || "#"}
         target="_blank"
-        href={project.link}
-        disabled={project.link === undefined}
+        disabled={!project.link && !project.buttonText?.includes("Demo")}
+        fullWidth
+        mt={25}
+        size="md"
+        radius="md"
+        variant="gradient"
+        gradient={{ from: "blue.6", to: "indigo.6" }}
+        rightSection={<IconExternalLink size={16} />}
       >
-        {project.buttonText ? project.buttonText : "View Website"}
+        {project.buttonText || "View Website"}
       </Button>
     </Card>
   );
@@ -240,27 +274,31 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
 const Projects = () => {
   return (
-    <Container
-      size="xl"
-      py={70}
-      className="flex flex-col justify-center items-center"
-    >
-      <Title c="white">MY PROJECTS</Title>
+    <Container size="xl" py={90}>
+      {/* Top Section Header */}
+      <Group justify="space-between" align="flex-end" mb={40}>
+        <Box maw={600}>
+          <Title order={2} c="white" fz={{ base: 32, md: 44 }} fw={900}>
+            MY PROJECTS
+          </Title>
+          <Text c="gray.4" fz="md" mt={6}>
+            Real-world enterprise applications built with high standards of architecture, security, and responsive UI delivery.
+          </Text>
+        </Box>
 
-      <Carousel
-        mt={40}
-        slideSize="30%"
-        slideGap="md"
-        controlsOffset="sm"
-        withControls
-        withIndicators={false}
-      >
+        <Text c="dimmed" fz="xs" style={{ fontFamily: "monospace" }}>
+          Featured work from actual production deployments
+        </Text>
+      </Group>
+
+      {/* 2x2 Grid Layout */}
+      <Grid gutter="lg">
         {projects.map((project, index) => (
-          <Carousel.Slide key={index}>
-            <ProjectItem project={project} />
-          </Carousel.Slide>
+          <Grid.Col key={index} span={{ base: 12, md: 6 }}>
+            <ProjectCard project={project} />
+          </Grid.Col>
         ))}
-      </Carousel>
+      </Grid>
     </Container>
   );
 };
